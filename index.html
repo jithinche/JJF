@@ -1,12 +1,484 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f5f7f4"><title>JJ Family Finance</title><style>
-:root{--bg:#f5f7f4;--card:#fff;--ink:#1c2925;--muted:#718078;--green:#176b50;--mint:#e7f3ed;--line:#e5ebe6;--red:#b64f47;--gold:#d6a84f;--shadow:0 8px 28px #18382b0b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0}.app{max-width:1050px;margin:auto;padding:24px 22px 100px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}.brand{font-weight:750;font-size:18px;letter-spacing:-.4px}.brand small{display:block;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:0}.actions{display:flex;gap:8px}.iconbtn,.secondary{background:white;border:1px solid var(--line);border-radius:12px;padding:10px 13px;color:var(--ink)}.primary{background:var(--green);color:white;border-radius:12px;padding:11px 15px;font-weight:650}.tabs{display:flex;gap:8px;background:#e9eee9;padding:5px;border-radius:15px;width:max-content;margin:0 auto 24px}.tab{padding:9px 18px;border-radius:11px;background:transparent;color:#5f6d65;font-weight:650}.tab.active{background:#fff;color:var(--green);box-shadow:0 2px 8px #19352712}.hero{background:linear-gradient(120deg,#155b45,#26785c);color:#fff;border-radius:24px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:17px}.eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:700}.hero h1{font-size:38px;letter-spacing:-1.5px;margin:5px 0 2px}.hero p{margin:0;opacity:.8}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}.stat label{display:block;color:var(--muted);font-size:12px;font-weight:650;margin-bottom:7px}.stat strong{font-size:22px;letter-spacing:-.6px}.section{margin-top:22px}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:0 1px 12px}.sectionhead h2{font-size:17px;margin:0;letter-spacing:-.3px}.muted{color:var(--muted)}.accounts{display:grid;grid-template-columns:1fr 1fr;gap:13px}.person h3{margin:0 0 12px;font-size:15px}.accountrow{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)}.accountrow span{color:var(--muted)}.accountrow button{padding:0;background:none;color:var(--ink);font-weight:700}.accountrow button:hover{color:var(--green)}.monthgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.simplelist{display:grid;gap:9px}.row{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.rowtitle{font-weight:650}.rowmeta{font-size:12px;color:var(--muted);margin-top:3px}.rowamt{font-weight:750;white-space:nowrap}.negative{color:var(--red)}.positive{color:var(--green)}.empty{padding:28px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #d5ded7;border-radius:16px}.toolbar{display:flex;align-items:center;gap:9px}.toolbar select,.toolbar input{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px;color:var(--ink)}.modalwrap{position:fixed;inset:0;background:#10241c73;z-index:5;display:none;align-items:flex-end;justify-content:center;padding:16px}.modalwrap.show{display:flex}.modal{background:#fff;border-radius:22px;width:min(540px,100%);max-height:92vh;overflow:auto;padding:22px;box-shadow:0 20px 70px #071d14aa}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modalhead h2{font-size:20px;margin:0}.close{background:#f1f4f1;border-radius:10px;padding:7px 11px}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:5px}.field.wide{grid-column:1/-1}.field label{font-size:12px;color:var(--muted);font-weight:650}.field input,.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;background:white}.formbuttons{grid-column:1/-1;display:flex;justify-content:space-between;gap:8px;margin-top:8px}.delete{background:#fff2f0;color:var(--red);border-radius:11px;padding:11px 13px}.save{margin-left:auto}.monthnav{display:flex;gap:8px;align-items:center}.monthnav button{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 11px}.progressbar{height:9px;border-radius:99px;background:#edf1ed;overflow:hidden;margin-top:10px}.progressbar i{display:block;height:100%;background:var(--green);border-radius:99px}.tripcard{padding:18px}.triphead{display:flex;justify-content:space-between;align-items:flex-start}.triphead h3{margin:0}.triptotal{font-size:24px;font-weight:750;margin-top:12px}.pill{font-size:11px;background:var(--mint);color:var(--green);border-radius:99px;padding:5px 9px;font-weight:700}.mobileadd{display:none}.foot{font-size:11px;color:var(--muted);text-align:center;margin:30px 0 0}
-@media(max-width:680px){.app{padding:17px 14px 92px}.top{margin-bottom:17px}.actions .secondary{display:none}.tabs{width:100%;justify-content:space-between;margin-bottom:17px}.tab{padding:9px 12px;font-size:13px}.hero{padding:22px;border-radius:20px}.hero h1{font-size:33px}.grid{grid-template-columns:1fr 1fr;gap:9px}.card{padding:15px}.stat strong{font-size:19px}.accounts{grid-template-columns:1fr}.monthgrid{gap:8px}.monthgrid .card{padding:13px}.monthgrid .stat strong{font-size:17px}.toolbar{flex-wrap:wrap}.toolbar select{flex:1}.mobileadd{display:block;position:fixed;right:18px;bottom:20px;width:56px;height:56px;border-radius:18px;background:var(--green);color:white;font-size:27px;box-shadow:0 6px 20px #185f48aa;z-index:3}.modalwrap{padding:0;align-items:flex-end}.modal{border-radius:22px 22px 0 0;padding:20px 18px max(20px,env(safe-area-inset-bottom))}.form{gap:10px}}
-</style></head><body><main class="app"><header class="top"><div class="brand">JJ <span style="color:var(--green)">Family Finance</span><small>Your money, simply in view</small></div><div class="actions"><button class="secondary" id="backupBtn">Backup</button><button class="iconbtn" id="settingsBtn" aria-label="Settings">⚙</button></div></header><nav class="tabs" aria-label="Main areas"><button class="tab active" data-page="home">Home</button><button class="tab" data-page="spending">Spending</button><button class="tab" data-page="trips">Trips</button><button class="tab" data-page="progress">Progress</button></nav><div id="view"></div><button class="mobileadd" id="quickAdd" aria-label="Add">+</button><p class="foot">Stored privately in this browser · <button id="backupLink" style="background:none;color:var(--green);padding:0">Backup or restore</button></p></main><div class="modalwrap" id="modalwrap"><section class="modal"><div class="modalhead"><h2 id="modalTitle"></h2><button class="close" id="closeModal">✕</button></div><div id="modalBody"></div></section></div><input type="file" id="restoreFile" accept="application/json" hidden><script>
-(()=>{'use strict';const KEY='jj-family-finance-v1';const today=()=>new Date().toISOString().slice(0,10);const monthNow=()=>today().slice(0,7);const seed=()=>({version:1,accounts:[{id:'j-current',person:'Jithu',type:'Current',balance:0},{id:'j-savings',person:'Jithu',type:'Savings',balance:0},{id:'j-card',person:'Jithu',type:'Credit Card',balance:0},{id:'j-cash',person:'Jithu',type:'Cash',balance:0},{id:'s-current',person:'Josna',type:'Current',balance:0},{id:'s-savings',person:'Josna',type:'Savings',balance:0},{id:'s-card',person:'Josna',type:'Credit Card',balance:0},{id:'s-cash',person:'Josna',type:'Cash',balance:0}],tx:[],trips:[],goals:{}});let db;try{db=JSON.parse(localStorage.getItem(KEY))||seed()}catch{db=seed()}let page='home',selectedMonth=monthNow();const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const money=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR'}).format(Number(n)||0);function persist(){localStorage.setItem(KEY,JSON.stringify(db));render()}function account(id){return db.accounts.find(a=>a.id===id)}function totals(){let g={Current:0,Savings:0,Cash:0,'Credit Card':0};for(const a of db.accounts){if(a.type in g)g[a.type]+=Number(a.balance)||0}return g}function txImpact(t,sign=1){let n=Number(t.amount)||0;if(t.kind==='income'){let a=account(t.to);if(a)a.balance+=n*sign}else if(t.kind==='expense'){let a=account(t.from);if(a){if(a.type==='Credit Card')a.balance+=n*sign;else a.balance-=n*sign}}else if(t.kind==='transfer'){let a=account(t.from),b=account(t.to);if(a)a.balance-=n*sign;if(b)b.balance+=n*sign}}function addTx(t){t.id=t.id||crypto.randomUUID();db.tx.push(t);txImpact(t);persist()}function editTx(id,patch){let t=db.tx.find(x=>x.id===id);if(!t)return;txImpact(t,-1);Object.assign(t,patch);txImpact(t);persist()}function delTx(id){let i=db.tx.findIndex(x=>x.id===id);if(i<0)return;txImpact(db.tx[i],-1);db.tx.splice(i,1);persist()}function acctSelect(type,sel,name,empty=false){return '<select name="'+name+'" required>'+(!empty?'':'<option value="">Choose account</option>')+db.accounts.filter(a=>!type||type.includes(a.type)).map(a=>`<option value="${a.id}" ${a.id===sel?'selected':''}>${esc(a.person)} · ${esc(a.type)}</option>`).join('')+'</select>'}function openModal(title,html){$('#modalTitle').textContent=title;$('#modalBody').innerHTML=html;$('#modalwrap').classList.add('show')}function closeModal(){$('#modalwrap').classList.remove('show')}$('#closeModal').onclick=closeModal;$('#modalwrap').onclick=e=>{if(e.target===$('#modalwrap'))closeModal()};function expenseModal(existing){let t=existing||{},editing=!!existing,form=`<form class="form" id="txForm"><div class="field"><label>Type</label><select name="kind" id="kind"><option value="expense" ${t.kind==='expense'?'selected':''}>Expense</option><option value="income" ${t.kind==='income'?'selected':''}>Income / payday</option><option value="transfer" ${t.kind==='transfer'?'selected':''}>Transfer between accounts</option></select></div><div class="field"><label>Amount (€)</label><input name="amount" type="number" min="0.01" step="0.01" required value="${t.amount??''}" placeholder="0.00"></div><div class="field wide"><label>Description</label><input name="description" required value="${esc(t.description||'')}" placeholder="Salary, groceries…"></div><div class="field"><label>Date</label><input name="date" type="date" value="${t.date||today()}" required></div><div class="field"><label>Person</label><select name="person"><option ${t.person==='Jithu'?'selected':''}>Jithu</option><option ${t.person==='Josna'?'selected':''}>Josna</option><option ${t.person==='Family'?'selected':''}>Family</option></select></div><div class="field" id="fromField"><label id="fromLabel">Paid from</label><div id="fromSelect"></div></div><div class="field" id="toField"><label id="toLabel">Received into</label><div id="toSelect"></div></div><div class="field" id="categoryField"><label>Category</label><select name="category">${['Food','Home','Transport','Bills','Health','Shopping','Family','Travel','Other'].map(c=>`<option ${c===(t.category||'Other')?'selected':''}>${c}</option>`).join('')}</select></div><div class="field" id="recField"><label>Recurring?</label><select name="frequency"><option value="none">No</option>${['Weekly','Fortnightly','Monthly','Quarterly','Yearly'].map(x=>`<option ${t.frequency===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field wide"><label>Trip (optional)</label><select name="tripId"><option value="">No trip</option>${db.trips.map(x=>`<option value="${x.id}" ${t.tripId===x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></div><div class="formbuttons">${editing?'<button type="button" class="delete" id="deleteTx">Delete</button>':''}<button class="primary save" type="submit">${editing?'Save changes':'Add entry'}</button></div></form>`;openModal(editing?'Edit entry':'Add an entry',form);const f=$('#txForm');function sync(){let k=$('#kind').value,fromTypes=k==='income'?['Current','Savings','Cash']:['Current','Savings','Cash','Credit Card'];if(k==='transfer')fromTypes=['Current','Savings','Cash','Credit Card'];$('#fromLabel').textContent=k==='income'?'Received into':k==='transfer'?'From account':'Paid from';$('#toLabel').textContent=k==='transfer'?'To account':'—';$('#fromSelect').innerHTML=acctSelect(k==='income'?['Current','Savings','Cash']:fromTypes,k==='income'?t.to:t.from,'from');$('#toField').style.display=k==='income'?'none':'grid';if(k==='transfer')$('#toSelect').innerHTML=acctSelect(null,t.to,'to',true);else if(k==='expense')$('#toSelect').innerHTML='<div class="muted" style="padding:10px 0">Expense</div>';$('#categoryField').style.display=k==='expense'?'grid':'none';$('#recField').style.display=k==='expense'?'grid':'none'}$('#kind').onchange=sync;sync();if(editing)$('#deleteTx').onclick=()=>{if(confirm('Delete this entry? The account balances will be recalculated.')){delTx(t.id);closeModal()}};f.onsubmit=e=>{e.preventDefault();let d=new FormData(f),kind=d.get('kind'),amount=Number(d.get('amount')),source=d.get('from');if(kind==='transfer'&&source===d.get('to'))return alert('Choose two different accounts.');let obj={id:t.id,kind,amount,description:d.get('description').trim(),date:d.get('date'),person:d.get('person'),category:kind==='expense'?d.get('category'):'',frequency:kind==='expense'?d.get('frequency'):'none',tripId:kind==='expense'?d.get('tripId'):'',from:kind==='income'?'':source,to:kind==='income'?source:kind==='transfer'?d.get('to'):''};if(editing)editTx(t.id,obj);else addTx(obj);closeModal()}}function accountEdit(a){openModal('Edit balance',`<form class="form" id="balForm"><div class="field wide"><label>${esc(a.person)} · ${esc(a.type)} balance (€)</label><input name="balance" type="number" step="0.01" required value="${Number(a.balance).toFixed(2)}"></div><div class="field wide"><span class="muted" style="font-size:12px">Set the current balance. This adjusts the starting balance and keeps your transaction history.</span></div><div class="formbuttons"><button type="button" class="secondary" id="close2">Cancel</button><button class="primary save">Save balance</button></div></form>`);$('#close2').onclick=closeModal;$('#balForm').onsubmit=e=>{e.preventDefault();a.balance=Number(new FormData(e.target).get('balance'));persist();closeModal()}}
-function renderHome(){let s=totals(),net=s.Current+s.Savings+s.Cash,m=db.tx.filter(t=>t.date?.startsWith(selectedMonth)),inc=m.filter(t=>t.kind==='income').reduce((a,t)=>a+Number(t.amount),0),sp=m.filter(t=>t.kind==='expense').reduce((a,t)=>a+Number(t.amount),0),saved=inc-sp;return `<section class="hero"><div class="eyebrow">Total money we have</div><h1>${money(net)}</h1><p>Current + savings + cash · credit cards shown separately</p></section><div class="grid"><div class="card stat"><label>Combined current</label><strong>${money(s.Current)}</strong></div><div class="card stat"><label>Combined savings</label><strong>${money(s.Savings)}</strong></div><div class="card stat"><label>Cash</label><strong>${money(s.Cash)}</strong></div><div class="card stat"><label>Credit card balances</label><strong class="negative">${money(s['Credit Card'])}</strong></div></div><div class="section"><div class="sectionhead"><h2>Accounts</h2><span class="muted" style="font-size:12px">Tap a balance to edit</span></div><div class="accounts">${['Jithu','Josna'].map(p=>`<div class="card person"><h3>${p}</h3>${['Current','Savings','Credit Card','Cash'].map(type=>{let a=db.accounts.find(x=>x.person===p&&x.type===type);return `<div class="accountrow"><span>${type}</span><button data-account="${a.id}">${money(a.balance)}</button></div>`}).join('')}</div>`).join('')}</div></div><div class="section"><div class="sectionhead"><h2>This month</h2>${monthControl()}</div><div class="monthgrid"><div class="card stat"><label>Income</label><strong class="positive">${money(inc)}</strong></div><div class="card stat"><label>Expenses</label><strong>${money(sp)}</strong></div><div class="card stat"><label>${saved>=0?'Net saved':'Over income'}</label><strong class="${saved>=0?'positive':'negative'}">${money(saved)}</strong></div></div></div><div class="section"><div class="sectionhead"><h2>Recent activity</h2><button class="primary" data-add>Add entry</button></div>${txList(m.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5))}</div>`}function monthControl(){return `<div class="monthnav"><button data-month="-1">‹</button><strong style="font-size:13px">${new Date(selectedMonth+'-02').toLocaleDateString('en-IE',{month:'long',year:'numeric'})}</strong><button data-month="1">›</button></div>`}function txList(items){if(!items.length)return '<div class="empty">Nothing recorded here yet. Add an entry to get started.</div>';return `<div class="simplelist">${items.map(t=>{let sign=t.kind==='income'?'+':t.kind==='expense'?'−':'↔';let accountName=t.kind==='income'?account(t.to)?.type:t.kind==='expense'?account(t.from)?.type:(account(t.from)?.type+' → '+account(t.to)?.type);return `<div class="row"><div style="min-width:0"><div class="rowtitle">${esc(t.description)}${t.tripId?' <span class="pill">Trip</span>':''}</div><div class="rowmeta">${new Date(t.date+'T12:00:00').toLocaleDateString('en-IE',{day:'numeric',month:'short',year:'numeric'})} · ${esc(t.person||'')} · ${esc(t.category||accountName||'')}</div></div><div style="text-align:right"><div class="rowamt ${t.kind==='income'?'positive':t.kind==='expense'?'':'muted'}">${sign} ${money(t.amount)}</div><button data-edit="${t.id}" style="background:none;color:var(--green);font-size:12px;padding:5px 0 0">Edit</button></div></div>`}).join('')}</div>'}function renderSpending(){let items=db.tx.filter(t=>t.date?.startsWith(selectedMonth));let incomes=items.filter(t=>t.kind==='income'),expenses=items.filter(t=>t.kind==='expense'),recurring=db.tx.filter(t=>t.kind==='expense'&&t.frequency&&t.frequency!=='none');return `<div class="sectionhead"><h2>Spending</h2><div class="toolbar">${monthControl()}<button class="primary" data-add>Add entry</button></div></div><div class="monthgrid"><div class="card stat"><label>Income this month</label><strong class="positive">${money(incomes.reduce((a,t)=>a+t.amount,0))}</strong></div><div class="card stat"><label>Expenses this month</label><strong>${money(expenses.reduce((a,t)=>a+t.amount,0))}</strong></div><div class="card stat"><label>Entries</label><strong>${items.length}</strong></div></div><div class="section"><div class="sectionhead"><h2>Entries</h2><span class="muted" style="font-size:12px">Expenses, income and transfers</span></div>${txList(items.slice().sort((a,b)=>b.date.localeCompare(a.date)))}</div><div class="section"><div class="sectionhead"><h2>Recurring expenses</h2><span class="muted" style="font-size:12px">Templates for reference</span></div>${txList(recurring.slice().sort((a,b)=>a.description.localeCompare(b.description)))}</div>`}function renderTrips(){let cards=db.trips.slice().sort((a,b)=>b.start.localeCompare(a.start)).map(tr=>{let tx=db.tx.filter(t=>t.tripId===tr.id&&t.kind==='expense'),sum=tx.reduce((n,t)=>n+Number(t.amount),0),who=['Jithu','Josna'].map(p=>`<span class="pill">${p}: ${money(tx.filter(t=>t.person===p).reduce((n,t)=>n+t.amount,0))}</span>`).join('');return `<article class="card tripcard"><div class="triphead"><div><h3>${esc(tr.name)}</h3><div class="rowmeta">${tr.start?new Date(tr.start+'T12:00:00').toLocaleDateString('en-IE'):'Date not set'}${tr.end?' → '+new Date(tr.end+'T12:00:00').toLocaleDateString('en-IE'):''} · ${tr.status==='completed'?'Completed':'In progress'}</div></div><div><button data-trip-edit="${tr.id}" style="background:none;color:var(--green);font-size:12px">Edit trip</button> <button data-trip-delete="${tr.id}" style="background:none;color:var(--red);font-size:12px">Delete</button></div></div><div class="triptotal">${money(sum)} <span class="muted" style="font-size:13px;font-weight:500">${tr.status==='completed'?'final trip total':'spent so far'}</span></div><div style="display:flex;gap:8px;margin:12px 0">${who}</div><div class="sectionhead" style="margin-top:8px"><span class="muted" style="font-size:12px">${tx.length} expenses</span><button class="primary" data-trip-add="${tr.id}">Add expense</button></div>${txList(tx.slice().sort((a,b)=>b.date.localeCompare(a.date)))}</article>`}).join('');return `<div class="sectionhead"><h2>Trips</h2><button class="primary" id="newTrip">+ New trip</button></div><p class="muted" style="margin:0 0 14px">Log trip costs here. They also appear in household spending and account balances exactly once.</p>${cards?`<div class="simplelist">${cards}</div>`:'<div class="empty">Your trips start at €0. Create a trip when you are ready to track spending.</div>'}`}
-function renderProgress(){let items=db.tx.filter(t=>t.date?.startsWith(selectedMonth)),inc=items.filter(t=>t.kind==='income').reduce((n,t)=>n+t.amount,0),exp=items.filter(t=>t.kind==='expense').reduce((n,t)=>n+t.amount,0),net=inc-exp;let prior=new Date(selectedMonth+'-02');prior.setMonth(prior.getMonth()-1);let priorKey=prior.toISOString().slice(0,7),old=db.tx.filter(t=>t.date?.startsWith(priorKey)),oldNet=old.filter(t=>t.kind==='income').reduce((n,t)=>n+t.amount,0)-old.filter(t=>t.kind==='expense').reduce((n,t)=>n+t.amount,0);return `<div class="sectionhead"><h2>Progress</h2>${monthControl()}</div><section class="hero"><div class="eyebrow">Savings improvement · ${new Date(selectedMonth+'-02').toLocaleDateString('en-IE',{month:'long',year:'numeric'})}</div><h1>${money(net)}</h1><p>Income minus expenses recorded this month</p></section><div class="monthgrid"><div class="card stat"><label>Income</label><strong class="positive">${money(inc)}</strong></div><div class="card stat"><label>Expenses</label><strong>${money(exp)}</strong></div><div class="card stat"><label>Previous month</label><strong>${money(oldNet)}</strong></div></div><div class="section card"><div class="sectionhead"><div><h2>Monthly savings goal</h2><div class="rowmeta">Optional target to help you build savings</div></div><button id="goalEdit" class="secondary">${db.goals[selectedMonth]?'Edit':'Set goal'}</button></div>${db.goals[selectedMonth]?`<div style="font-size:22px;font-weight:750">${money(Math.max(0,net))} <span class="muted" style="font-size:15px;font-weight:500">of ${money(db.goals[selectedMonth])}</span></div><div class="progressbar"><i style="width:${Math.min(100,Math.max(0,net)/db.goals[selectedMonth]*100)}%"></i></div>`:'<p class="muted" style="margin-bottom:0">Set a monthly target if you want a simple progress marker.</p>'}</div><div class="section"><div class="sectionhead"><h2>Spending by category</h2></div>${(()=>{let cats={};items.filter(t=>t.kind==='expense').forEach(t=>cats[t.category||'Other']=(cats[t.category||'Other']||0)+t.amount);return Object.keys(cats).length?'<div class="simplelist">'+Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="row"><span>${esc(k)}</span><strong>${money(v)}</strong></div>`).join('')+'</div>':'<div class="empty">Category totals appear as you record expenses.</div>'})()}</div>`}
-function render(){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('#quickAdd').style.display=page==='trips'?'none':'';$('#view').innerHTML=page==='home'?renderHome():page==='spending'?renderSpending():page==='trips'?renderTrips():renderProgress();$('#view').querySelectorAll('[data-account]').forEach(b=>b.onclick=()=>accountEdit(account(b.dataset.account)));$('#view').querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>expenseModal());$('#view').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>expenseModal(db.tx.find(t=>t.id===b.dataset.edit)));$('#view').querySelectorAll('[data-month]').forEach(b=>b.onclick=()=>{let d=new Date(selectedMonth+'-02');d.setMonth(d.getMonth()+Number(b.dataset.month));selectedMonth=d.toISOString().slice(0,7);render()});if($('#newTrip'))$('#newTrip').onclick=()=>tripModal();$('#view').querySelectorAll('[data-trip-add]').forEach(b=>b.onclick=()=>expenseModal({kind:'expense',tripId:b.dataset.tripAdd,category:'Other'}));$('#view').querySelectorAll('[data-trip-edit]').forEach(b=>b.onclick=()=>tripModal(db.trips.find(t=>t.id===b.dataset.tripEdit)));$('#view').querySelectorAll('[data-trip-delete]').forEach(b=>b.onclick=()=>{let tr=db.trips.find(t=>t.id===b.dataset.tripDelete);if(confirm(`Delete ${tr.name}? Its expenses will remain as household expenses, with the trip link removed.`)){db.tx.forEach(t=>{if(t.tripId===tr.id)t.tripId='' });db.trips=db.trips.filter(x=>x.id!==tr.id);persist()}});if($('#goalEdit'))$('#goalEdit').onclick=()=>openModal('Monthly savings goal',`<form class="form" id="goalForm"><div class="field wide"><label>Target (€)</label><input type="number" name="goal" min="1" step="1" required value="${db.goals[selectedMonth]||''}"></div><div class="formbuttons"><button class="primary save">Save goal</button></div></form>`),$('#goalForm').onsubmit=e=>{e.preventDefault();db.goals[selectedMonth]=Number(new FormData(e.target).get('goal'));persist();closeModal()}}
-function tripModal(tr){let edit=!!tr;openModal(edit?'Edit trip':'Create a trip',`<form class="form" id="tripForm"><div class="field wide"><label>Trip name</label><input name="name" required value="${esc(tr?.name||'')}" placeholder="e.g. India 2026"></div><div class="field"><label>Start date</label><input name="start" type="date" value="${tr?.start||''}"></div><div class="field"><label>End date</label><input name="end" type="date" value="${tr?.end||''}"></div><div class="field wide"><label>Status</label><select name="status"><option value="active" ${tr?.status!=='completed'?'selected':''}>In progress</option><option value="completed" ${tr?.status==='completed'?'selected':''}>Completed</option></select></div><div class="formbuttons">${edit?'<button class="delete" type="button" id="tripDel">Delete trip</button>':''}<button class="primary save">${edit?'Save trip':'Create trip'}</button></div></form>`);$('#tripForm').onsubmit=e=>{e.preventDefault();let d=new FormData(e.target),obj={id:tr?.id||crypto.randomUUID(),name:d.get('name').trim(),start:d.get('start'),end:d.get('end'),status:d.get('status')};if(edit)Object.assign(tr,obj);else db.trips.push(obj);persist();closeModal()};if(edit)$('#tripDel').onclick=()=>{if(confirm('Delete this trip? Expenses stay in household spending.')){db.tx.forEach(t=>{if(t.tripId===tr.id)t.tripId=''});db.trips=db.trips.filter(x=>x.id!==tr.id);persist();closeModal()}}}
-$('.tabs').onclick=e=>{let b=e.target.closest('[data-page]');if(b){page=b.dataset.page;render()}};$('#quickAdd').onclick=()=>expenseModal();$('#settingsBtn').onclick=()=>settings();$('#backupBtn').onclick=backup;$('#backupLink').onclick=settings;function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='JJ-Family-Finance-backup-'+today()+'.json';a.click();URL.revokeObjectURL(a.href)}function settings(){openModal('Data & setup',`<p class="muted" style="margin-top:0">Your information is stored in this browser. Save a backup before moving to another device.</p><div style="display:grid;gap:10px"><button class="primary" id="setupBtn">Set account balances</button><button class="secondary" id="exportBtn">Download backup</button><button class="secondary" id="restoreBtn">Restore from backup</button><button class="delete" id="resetBtn">Reset all data to zero</button></div>`);$('#setupBtn').onclick=()=>{closeModal();setupBalances()};$('#exportBtn').onclick=backup;$('#restoreBtn').onclick=()=>$('#restoreFile').click();$('#resetBtn').onclick=()=>{if(confirm('Reset all accounts, entries, trips and goals to zero? This cannot be undone.')){db=seed();persist();closeModal()}}}function setupBalances(){openModal('Set starting balances',`<form class="form" id="setupForm">${db.accounts.map(a=>`<div class="field"><label>${esc(a.person)} · ${esc(a.type)} (€)</label><input type="number" step="0.01" name="${a.id}" value="${Number(a.balance).toFixed(2)}" required></div>`).join('')}<div class="formbuttons"><button class="primary save">Save balances</button></div></form>`);$('#setupForm').onsubmit=e=>{e.preventDefault();let d=new FormData(e.target);db.accounts.forEach(a=>a.balance=Number(d.get(a.id)));persist();closeModal()}}$('#restoreFile').onchange=async e=>{let file=e.target.files[0];if(!file)return;try{let data=JSON.parse(await file.text());if(!data||!Array.isArray(data.accounts)||!Array.isArray(data.tx)||!Array.isArray(data.trips))throw Error('Invalid backup format');if(confirm('Restore this backup? Current data in this browser will be replaced.')){db=data;persist();closeModal()}}catch(err){alert('Could not restore that file: '+err.message)}e.target.value=''};render();})();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JJ Family Finance</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load React, ReactDOM, and Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body { margin: 0; background-color: #f8fafc; }
+        /* Hide scrollbar for cleaner mobile look */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // --- INLINE ICONS ---
+        const IconHome = ({ size = 24, className = "" }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        );
+        const IconCreditCard = ({ size = 24, className = "" }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+        );
+        const IconTrendingUp = ({ size = 24, className = "" }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        );
+        const IconPlus = ({ size = 24, className = "" }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        );
+        const IconSettings = ({ size = 24, className = "" }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+        );
+        const IconDownload = ({ size = 24, className = "" }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+        );
+
+        // --- INITIAL EDITABLE DATASET ---
+        const INITIAL_ACCOUNTS = [
+          { id: 'j-curr', name: 'Jithu AIB Current', owner: 'Jithu', type: 'current', balance: 666.48 },
+          { id: 'j-sav', name: 'Jithu AIB Savings', owner: 'Jithu', type: 'savings', balance: 2.54 },
+          { id: 'j-cash', name: 'Jithu Cash', owner: 'Jithu', type: 'cash', balance: 0 },
+          { id: 'j-cc', name: 'Jithu AIB Credit', owner: 'Jithu', type: 'credit', balance: -1471.74, limit: 1500 },
+          { id: 'j-loan', name: 'AIB Loan', owner: 'Jithu', type: 'loan', balance: -763.00 },
+          { id: 'j-humm', name: 'Humm', owner: 'Jithu', type: 'loan', balance: -538.00 },
+          
+          { id: 'jo-curr', name: 'Josna AIB Current', owner: 'Josna', type: 'current', balance: 1239.92 },
+          { id: 'jo-sav', name: 'Josna AIB Savings', owner: 'Josna', type: 'savings', balance: 277.82 },
+          { id: 'jo-cash', name: 'Josna Cash', owner: 'Josna', type: 'cash', balance: 0 },
+          { id: 'jo-cc', name: 'Josna AIB Credit', owner: 'Josna', type: 'credit', balance: -525.54, limit: 1500 },
+
+          { id: 'inv-stk', name: 'Revolut Stocks', owner: 'Family', type: 'investment', balance: 570.00 },
+          { id: 'inv-cry', name: 'Revolut Crypto', owner: 'Family', type: 'investment', balance: 223.00 },
+        ];
+
+        const INITIAL_CATEGORIES = [
+          'Mortgage/Rent', 'Groceries', 'Eating Out', 'Utilities', 'Car/Transport', 
+          'Childcare/Jewel', 'India Commitments', 'Shopping', 'Health', 'Subscriptions', 'Income'
+        ];
+
+        function JJFamilyFinance() {
+          const [activeTab, setActiveTab] = useState('home');
+          const [accounts, setAccounts] = useState([]);
+          const [transactions, setTransactions] = useState([]);
+          const [showTxModal, setShowTxModal] = useState(false);
+          const [txFormType, setTxFormType] = useState('expense');
+
+          useEffect(() => {
+            const savedAccounts = localStorage.getItem('jj_accounts');
+            const savedTransactions = localStorage.getItem('jj_transactions');
+            
+            if (savedAccounts) setAccounts(JSON.parse(savedAccounts));
+            else setAccounts(INITIAL_ACCOUNTS);
+
+            if (savedTransactions) setTransactions(JSON.parse(savedTransactions));
+          }, []);
+
+          useEffect(() => {
+            if (accounts.length > 0) {
+              localStorage.setItem('jj_accounts', JSON.stringify(accounts));
+              localStorage.setItem('jj_transactions', JSON.stringify(transactions));
+            }
+          }, [accounts, transactions]);
+
+          const currentMonth = new Date().getMonth();
+          const currentYear = new Date().getFullYear();
+
+          const thisMonthTx = transactions.filter(tx => {
+            const d = new Date(tx.date);
+            return d.getMonth() === currentMonth && d.getFullYear() === currentYear;
+          });
+
+          const incomeThisMonth = thisMonthTx
+            .filter(tx => tx.type === 'income')
+            .reduce((sum, tx) => sum + parseFloat(tx.amount), 0);
+
+          const spentThisMonth = thisMonthTx
+            .filter(tx => tx.type === 'expense')
+            .reduce((sum, tx) => sum + parseFloat(tx.amount), 0);
+
+          const savedThisMonth = incomeThisMonth - spentThisMonth;
+
+          const familyMoneyInHand = accounts
+            .filter(a => ['current', 'savings', 'cash'].includes(a.type))
+            .reduce((sum, a) => sum + a.balance, 0);
+            
+          const totalDebt = accounts
+            .filter(a => ['credit', 'loan'].includes(a.type))
+            .reduce((sum, a) => sum + a.balance, 0);
+
+          const handleAddTransaction = (tx) => {
+            const newTx = { ...tx, id: Date.now().toString(), amount: parseFloat(tx.amount) };
+            
+            setAccounts(prev => prev.map(acc => {
+              let newBalance = acc.balance;
+              if (tx.type === 'income' && acc.id === tx.accountId) newBalance += newTx.amount;
+              else if (tx.type === 'expense' && acc.id === tx.accountId) newBalance -= newTx.amount;
+              else if (tx.type === 'transfer') {
+                if (acc.id === tx.sourceId) newBalance -= newTx.amount;
+                if (acc.id === tx.destinationId) newBalance += newTx.amount;
+              }
+              return { ...acc, balance: newBalance };
+            }));
+
+            setTransactions(prev => [newTx, ...prev]);
+            setShowTxModal(false);
+          };
+
+          const handleReconcile = (accountId, actualBalance) => {
+            const acc = accounts.find(a => a.id === accountId);
+            if (!acc) return;
+            
+            const diff = parseFloat(actualBalance) - acc.balance;
+            if (diff === 0) return;
+
+            handleAddTransaction({
+              date: new Date().toISOString().split('T')[0],
+              amount: Math.abs(diff),
+              type: diff > 0 ? 'income' : 'expense',
+              category: 'Adjustment',
+              description: 'Manual Bank Reconciliation',
+              accountId: accountId,
+              owner: 'Family'
+            });
+          };
+
+          const deleteTransaction = (txId) => {
+            const tx = transactions.find(t => t.id === txId);
+            if (!tx) return;
+
+            setAccounts(prev => prev.map(acc => {
+              let newBalance = acc.balance;
+              if (tx.type === 'income' && acc.id === tx.accountId) newBalance -= tx.amount;
+              else if (tx.type === 'expense' && acc.id === tx.accountId) newBalance += tx.amount;
+              else if (tx.type === 'transfer') {
+                if (acc.id === tx.sourceId) newBalance += tx.amount;
+                if (acc.id === tx.destinationId) newBalance -= tx.amount;
+              }
+              return { ...acc, balance: newBalance };
+            }));
+
+            setTransactions(prev => prev.filter(t => t.id !== txId));
+          };
+
+          const Dashboard = () => (
+            <div className="space-y-6 pb-24">
+              <div className="bg-gradient-to-br from-indigo-900 to-slate-800 rounded-2xl p-6 text-white shadow-lg">
+                <h2 className="text-indigo-200 text-sm font-medium mb-1">Family Money In Hand</h2>
+                <div className="text-4xl font-light mb-4">€{familyMoneyInHand.toFixed(2)}</div>
+                <div className="flex justify-between text-sm border-t border-indigo-700 pt-3">
+                  <div>
+                    <span className="text-indigo-300 block text-xs">Total Debt (Cards/Loans)</span>
+                    <span className="text-red-300">€{Math.abs(totalDebt).toFixed(2)}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-indigo-300 block text-xs">Investments</span>
+                    <span className="text-emerald-300">
+                      €{accounts.filter(a=>a.type==='investment').reduce((sum,a)=>sum+a.balance,0).toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+                    <h3 className="text-slate-500 text-xs font-medium uppercase tracking-wider">In This Month</h3>
+                  </div>
+                  <div className="text-xl font-medium text-slate-800">€{incomeThisMonth.toFixed(2)}</div>
+                </div>
+                <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-2 h-2 rounded-full bg-rose-500"></div>
+                    <h3 className="text-slate-500 text-xs font-medium uppercase tracking-wider">Out This Month</h3>
+                  </div>
+                  <div className="text-xl font-medium text-slate-800">€{spentThisMonth.toFixed(2)}</div>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between">
+                <div>
+                  <h3 className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-1">Saved This Month</h3>
+                  <div className={`text-2xl font-medium ${savedThisMonth >= 0 ? 'text-emerald-600' : 'text-rose-600'}`}>
+                    {savedThisMonth >= 0 ? '+' : ''}€{savedThisMonth.toFixed(2)}
+                  </div>
+                </div>
+                <IconTrendingUp className={savedThisMonth >= 0 ? 'text-emerald-200' : 'text-rose-200'} size={40} />
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-slate-800 mb-3">Live Accounts</h3>
+                <div className="space-y-3">
+                  {accounts.filter(a => ['current', 'savings', 'cash'].includes(a.type)).map(acc => (
+                    <div key={acc.id} className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center">
+                      <div>
+                        <h4 className="font-medium text-slate-800">{acc.name}</h4>
+                        <p className="text-xs text-slate-400 capitalize">{acc.type} • {acc.owner}</p>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-medium text-slate-800">€{acc.balance.toFixed(2)}</div>
+                        <button 
+                          onClick={() => {
+                            const actual = prompt(`Reconcile ${acc.name}\nEnter actual bank balance:`, acc.balance);
+                            if(actual !== null && !isNaN(actual)) handleReconcile(acc.id, actual);
+                          }}
+                          className="text-xs text-indigo-500 font-medium hover:underline"
+                        >
+                          Reconcile
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+
+          const TransactionList = () => (
+            <div className="space-y-4 pb-24">
+              <h2 className="text-2xl font-semibold text-slate-800 mb-6">Recent Activity</h2>
+              {transactions.length === 0 ? (
+                <div className="text-center p-8 text-slate-400">No transactions yet.</div>
+              ) : (
+                transactions.map(tx => (
+                  <div key={tx.id} className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h4 className="font-medium text-slate-800">{tx.description || tx.category}</h4>
+                        {tx.trip && <span className="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-medium">Trip: {tx.trip}</span>}
+                      </div>
+                      <p className="text-xs text-slate-400">
+                        {tx.date} • {tx.type === 'transfer' ? `Transfer` : tx.category} • {tx.owner}
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <div className={`font-medium ${
+                        tx.type === 'income' ? 'text-emerald-600' : 
+                        tx.type === 'expense' ? 'text-rose-600' : 'text-slate-600'
+                      }`}>
+                        {tx.type === 'income' ? '+' : tx.type === 'expense' ? '-' : ''}€{tx.amount.toFixed(2)}
+                      </div>
+                      <button onClick={() => deleteTransaction(tx.id)} className="text-xs text-red-400 hover:text-red-600 mt-1">
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          );
+
+          const SettingsView = () => (
+            <div className="space-y-6 pb-24">
+              <h2 className="text-2xl font-semibold text-slate-800 mb-6">Data & Safety</h2>
+              <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                <div className="p-4 border-b border-slate-50 flex items-center justify-between">
+                  <div>
+                    <h4 className="font-medium text-slate-800">Export JSON</h4>
+                    <p className="text-xs text-slate-500">Backup your entire financial history</p>
+                  </div>
+                  <button className="p-2 bg-indigo-50 text-indigo-600 rounded-lg" onClick={() => {
+                    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({accounts, transactions}));
+                    const dlAnchorElem = document.createElement('a');
+                    dlAnchorElem.setAttribute("href", dataStr);
+                    dlAnchorElem.setAttribute("download", `jj_finance_backup_${new Date().toISOString().split('T')[0]}.json`);
+                    dlAnchorElem.click();
+                  }}>
+                    <IconDownload size={20} />
+                  </button>
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                   <div>
+                    <h4 className="font-medium text-red-600">Danger Zone</h4>
+                    <p className="text-xs text-slate-500">Reset all data to prompt defaults</p>
+                  </div>
+                  <button onClick={() => {
+                    if(window.confirm("Erase all data and reset?")) {
+                      setAccounts(INITIAL_ACCOUNTS);
+                      setTransactions([]);
+                    }
+                  }} className="px-4 py-2 bg-red-50 text-red-600 font-medium text-sm rounded-lg">
+                    Factory Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+
+          return (
+            <div className="min-h-screen bg-slate-50 text-slate-900 font-sans max-w-md mx-auto relative shadow-2xl overflow-hidden border-x border-slate-200">
+              <header className="px-6 py-5 bg-white border-b border-slate-100 flex justify-between items-center sticky top-0 z-10">
+                <div>
+                  <h1 className="text-xl font-bold text-slate-800 tracking-tight">JJ Finance</h1>
+                  <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Know. Control. Grow.</p>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">JJ</div>
+              </header>
+
+              <main className="p-6 h-[calc(100vh-140px)] overflow-y-auto">
+                {activeTab === 'home' && <Dashboard />}
+                {activeTab === 'spending' && <TransactionList />}
+                {activeTab === 'settings' && <SettingsView />}
+              </main>
+
+              <button 
+                onClick={() => setShowTxModal(true)}
+                className="absolute bottom-24 right-6 w-14 h-14 bg-indigo-600 text-white rounded-full shadow-lg shadow-indigo-200 flex items-center justify-center hover:bg-indigo-700 transition-transform active:scale-95 z-20"
+              >
+                <IconPlus size={28} />
+              </button>
+
+              <nav className="absolute bottom-0 w-full bg-white border-t border-slate-100 flex justify-around p-4 pb-6 z-10">
+                <button onClick={() => setActiveTab('home')} className={`flex flex-col items-center gap-1 ${activeTab === 'home' ? 'text-indigo-600' : 'text-slate-400'}`}>
+                  <IconHome size={22} />
+                  <span className="text-[10px] font-medium">Home</span>
+                </button>
+                <button onClick={() => setActiveTab('spending')} className={`flex flex-col items-center gap-1 ${activeTab === 'spending' ? 'text-indigo-600' : 'text-slate-400'}`}>
+                  <IconCreditCard size={22} />
+                  <span className="text-[10px] font-medium">Log</span>
+                </button>
+                <button onClick={() => setActiveTab('settings')} className={`flex flex-col items-center gap-1 ${activeTab === 'settings' ? 'text-indigo-600' : 'text-slate-400'}`}>
+                  <IconSettings size={22} />
+                  <span className="text-[10px] font-medium">Data</span>
+                </button>
+              </nav>
+
+              {showTxModal && (
+                <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex flex-col justify-end">
+                  <div className="bg-white rounded-t-3xl p-6 shadow-2xl" style={{ animation: 'slideUp 0.3s ease-out' }}>
+                    <div className="flex justify-between items-center mb-6">
+                      <h3 className="text-xl font-semibold">New Entry</h3>
+                      <button onClick={() => setShowTxModal(false)} className="text-slate-400 p-2 rounded-full bg-slate-100">✕</button>
+                    </div>
+                    
+                    <div className="flex bg-slate-100 p-1 rounded-xl mb-6">
+                      {['expense', 'transfer', 'income'].map(type => (
+                        <button
+                          key={type}
+                          onClick={() => setTxFormType(type)}
+                          className={`flex-1 py-2 text-sm font-medium rounded-lg capitalize transition-colors ${
+                            txFormType === type ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500'
+                          }`}
+                        >
+                          {type}
+                        </button>
+                      ))}
+                    </div>
+
+                    <form onSubmit={(e) => {
+                      e.preventDefault();
+                      const fd = new FormData(e.target);
+                      handleAddTransaction({
+                        type: txFormType,
+                        date: fd.get('date'),
+                        amount: fd.get('amount'),
+                        description: fd.get('description'),
+                        category: txFormType === 'transfer' ? 'Transfer' : fd.get('category'),
+                        owner: fd.get('owner'),
+                        accountId: fd.get('accountId'),
+                        sourceId: fd.get('sourceId'),
+                        destinationId: fd.get('destinationId'),
+                        trip: fd.get('trip')
+                      });
+                    }} className="space-y-4">
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="text-xs font-medium text-slate-500 mb-1 block">Amount</label>
+                          <input required name="amount" type="number" step="0.01" className="w-full border border-slate-200 rounded-xl px-4 py-3 text-lg" placeholder="0.00" />
+                        </div>
+                        <div>
+                          <label className="text-xs font-medium text-slate-500 mb-1 block">Date</label>
+                          <input required name="date" type="date" defaultValue={new Date().toISOString().split('T')[0]} className="w-full border border-slate-200 rounded-xl px-4 py-3" />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="text-xs font-medium text-slate-500 mb-1 block">Description</label>
+                        <input required name="description" type="text" className="w-full border border-slate-200 rounded-xl px-4 py-3" placeholder="e.g. Tesco Grocery" />
+                      </div>
+
+                      {txFormType !== 'transfer' ? (
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <label className="text-xs font-medium text-slate-500 mb-1 block">Account</label>
+                            <select required name="accountId" className="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white">
+                              {accounts.map(acc => <option key={acc.id} value={acc.id}>{acc.name} (€{acc.balance.toFixed(0)})</option>)}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="text-xs font-medium text-slate-500 mb-1 block">Category</label>
+                            <select required name="category" className="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white">
+                              {INITIAL_CATEGORIES.map(cat => <option key={cat} value={cat}>{cat}</option>)}
+                            </select>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-2 gap-4 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                          <div>
+                            <label className="text-xs font-medium text-indigo-600 mb-1 block">From</label>
+                            <select required name="sourceId" className="w-full border border-slate-200 rounded-xl px-2 py-3 bg-white text-sm">
+                               {accounts.map(acc => <option key={acc.id} value={acc.id}>{acc.name}</option>)}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="text-xs font-medium text-indigo-600 mb-1 block">To Account / Card</label>
+                            <select required name="destinationId" className="w-full border border-slate-200 rounded-xl px-2 py-3 bg-white text-sm">
+                               {accounts.map(acc => <option key={acc.id} value={acc.id}>{acc.name}</option>)}
+                            </select>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="text-xs font-medium text-slate-500 mb-1 block">Who</label>
+                          <select name="owner" className="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white">
+                            <option value="Family">Family</option>
+                            <option value="Jithu">Jithu</option>
+                            <option value="Josna">Josna</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="text-xs font-medium text-slate-500 mb-1 block">Trip Tag</label>
+                          <select name="trip" className="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white">
+                            <option value="">None</option>
+                            <option value="India 2026">India Trip 2026</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <button type="submit" className="w-full bg-indigo-600 text-white font-semibold py-4 rounded-xl mt-4 hover:bg-indigo-700">
+                        Save Entry
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<JJFamilyFinance />);
+    </script>
+    <style>
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>
